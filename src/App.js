@@ -5,8 +5,7 @@ import {
   Switch,
   NavLink,
   Route,
-  Redirect,
-  Link,
+  Redirect
 } from 'react-router-dom';
 import AuthPage from './AuthPage';
 import DetailPage from './DetailPage';
