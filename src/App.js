@@ -44,17 +44,16 @@ export default function App() {
           {/* if there is a user in state, render out a link to the board games list, the create page, and add a button to let the user logout */}
           {
             currentUser &&
-              <ul>
-                <li>
-                  <Link to="/list">Board Games</Link>
-                </li>
-                <li>
-                  <Link to="/create">Create a Board Game</Link>
-                </li>
-                <li>
-                  <button onClick={handleLogout}>Logout</button>
-                </li>
-              </ul>
+              <>
+                <NavLink to="/board-games">
+                Board Games
+                </NavLink>
+                <NavLink to="/create">
+                Create Game
+                </NavLink>
+                <button 
+                  onClick={handleLogout}>Logout</button>
+              </>
           }
         </header>
         <main>
@@ -63,9 +62,10 @@ export default function App() {
               {/* if there is a user, redirect to the board games list. Otherwise, render the auth page. Note that the AuthPage will need a function called setUser that can set the user state in App.js */}
               {
                 currentUser
-                  ? <Redirect to="/list" />
+                  ? <Redirect to="/board-games" />
                   : <AuthPage setCurrentUser={setCurrentUser} />
-              }
+              }.
+
             </Route>
             <Route exact path="/board-games">
               {/* if there is a user, render the board games list. Otherwise, redirect to the home route/auth page */}

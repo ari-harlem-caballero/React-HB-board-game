@@ -41,7 +41,7 @@ export default function AuthPage(props) {
         </label>
         <button onClick={handleSignIn} type='button'>Sign In</button>
         {/* on clicking sign up, sign the user up using the function defined above */}
-        <button onClick={handleSignUp} type="button" >Sign Up</button>
+        <button onClick={handleSignUp} type="button">Sign Up</button>
       </form>
     </div>
   );
